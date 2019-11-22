@@ -2,8 +2,15 @@
   <div class="container">
     <HeaderContainer />
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer. Odio ut sem nulla pharetra. Mauris augue neque gravida in fermentum et. Placerat duis ultricies lacus sed. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Maecenas ultricies mi eget mauris. Malesuada fames ac turpis egestas integer eget aliquet nibh. Urna et pharetra pharetra massa massa ultricies. Interdum velit laoreet id donec.</p>
-      <p>Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet. Nibh mauris cursus mattis molestie a iaculis at. Vulputate sapien nec sagittis aliquam malesuada bibendum. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Interdum consectetur libero id faucibus nisl tincidunt eget. Vulputate enim nulla aliquet porttitor lacus luctus. Ornare arcu dui vivamus arcu felis bibendum ut tristique. Dignissim cras tincidunt lobortis feugiat vivamus at. Turpis massa tincidunt dui ut ornare lectus.</p>
+      <p>
+        {{ articleData.opening }}
+      </p>
+      <div
+        v-for="scenario in articleData.scenarios"
+        :key="scenario.title"
+      >
+        {{ scenario }}
+      </div>
 
       <div class="bigImageContainer">
         <div class="topLayer">
@@ -27,6 +34,7 @@
 <script>
 
 import CommonUtils from '../mixins/CommonUtils'
+import ArticleData from '../data/data.json'
 import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
 import ShareContainer from '~/components/custom/ShareContainer'
@@ -50,8 +58,10 @@ export default {
   watch: {
 
   },
-  async asyncData (ctx) {
-
+  asyncData (ctx) {
+    return {
+      articleData: ArticleData.content
+    }
   },
   mounted () {
   },
