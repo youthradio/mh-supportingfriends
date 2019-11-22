@@ -12,3 +12,29 @@
     </div>
   </div>
 </template>
+  <style scoped lang="scss">
+    .bigImageContainer{
+    position: relative;
+    /* make container retain a size based on the text content*/
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    }
+    .bigImage img{
+    z-index: -1;
+    position: absolute;
+    /* make image size based on the parent container, which is dependent on text */
+    height: 100%;
+    width: 100%;
+    /* clean stretching */
+    object-fit: cover;
+    object-position: center;
+    }
+    .textContent{
+    z-index: 1;
+    padding: 10px;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    }
+    </style>
