@@ -24,7 +24,7 @@
     "d3-selection": "^1.4.0",
     "d3-svg-annotation": "^2.5.0",
     "d3-transition": "^1.2.0",
-    "gootenberg": "^1.4.2",
+    "gootenberg": "git://github.com/radames/gootenberg.git#test-security-updates",
     "howler": "^2.1.2",
     "lazysizes": "^5.1.2",
     "marked": "^0.7.0",
