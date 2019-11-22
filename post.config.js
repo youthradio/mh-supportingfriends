@@ -1,8 +1,8 @@
 export default {
-  'baseURL': '/static-nuxt-template',
-  'title': 'Static Template Title',
-  'author': 'Static Author',
-  'publishDate': 'Oct. 2, 2019',
+  'baseURL': '/mh-supportingfriends',
+  'title': 'Supporting your Friends',
+  'author': 'Interns',
+  'publishDate': 'Dec. 1, 2019',
   'location': 'Oakland, CA',
   'description': `SEO friendly Description`,
   'url': 'CANONICAL URL',
