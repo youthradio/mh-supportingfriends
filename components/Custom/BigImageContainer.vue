@@ -35,7 +35,6 @@
     z-index: 1;
     padding: 10px;
     margin: 0 auto;
-    width: 300px;
     height: 300px;
     }
 </style>
