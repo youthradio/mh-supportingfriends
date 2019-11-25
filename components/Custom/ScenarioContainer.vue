@@ -64,6 +64,8 @@ export default {
     max-width: 100%;
     max-height: 100%;
     overflow: hidden;
+    margin: 0 10px 0 10px;
+    flex-basis: 50%;
     }
     .bigImage img{
     z-index: -1;
