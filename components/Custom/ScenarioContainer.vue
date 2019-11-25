@@ -5,28 +5,45 @@
         <div class="bigImage">
           <img :src="scenario.mainImg">
         </div>
-        <div class="textContent">{{ scenario.text }}</div>
+        <div class="textContent">
+          {{ scenario.text }}
+        </div>
       </div>
     </div>
     <div class="flex-container">
       <div class="bigImageContainer">
-    <div class="topLayer">
-      <div class="bigImage">
-        <img :src="scenario.Img1">
+        <div class="topLayer">
+          <div class="bigImage">
+            <img :src="scenario.Img1">
+          </div>
+          <div class="textContent">
+            {{ scenario.options[0].option }}
+          </div>
+        </div>
       </div>
-      <div class="textContent">
-       {{ scenario.options[0].option }}
-      </div>
-    </div>
-  </div>
-    <div class="bigImageContainer">
-      <div class="topLayer">
+      <div class="bigImageContainer">
+        <div class="topLayer">
           <div class="bigImage">
             <img :src="scenario.Img2">
           </div>
           <div class="textContent">
             {{ scenario.options[1].option }}
-             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="optionContainer wrong-class">
+        <h5>Results:</h5>
+        <div class="textContent">
+          {{ scenario.options[0].result }}
+        </div>
+      </div>
+      <div class="optionContainer">
+        <h5>Results:</h5>
+        <div class="textContent">
+          {{ scenario.options[1].result }}
         </div>
       </div>
     </div>
@@ -48,14 +65,30 @@ export default {
 }
 </script>
   <style scoped lang="scss">
+  @import "~@/css/vars";
+  @import "~@/css/base";
     .flex-container{
         display: flex;
         padding-top: 10px;
         justify-content: center;
-        .big-image-comtainer{
-            padding-right: 10px;
-            padding-left: 10px;
+        /* bigImageContainer is reused outside of flex so this wouldn't apply to anything outside of a flexbox anyway */
+        .bigImageContainer{
+            flex-basis: 50%;
         }
+        .optionContainer{
+          flex-basis: 50%;
+          h5{
+            padding: 10px;
+          }
+        }
+    }
+
+    .optionContainer{
+      color: grey;
+    }
+
+    .correct-result{
+      color: $green;
     }
 
     .bigImageContainer{
@@ -65,7 +98,7 @@ export default {
     max-height: 100%;
     overflow: hidden;
     margin: 0 10px 0 10px;
-    flex-basis: 50%;
+
     }
     .bigImage img{
     z-index: -1;
@@ -82,8 +115,5 @@ export default {
     padding: 10px;
     margin: 0 auto;
     height: 300px;
-    }
-    .testClass{
-        background-color: blue;
     }
     </style>
