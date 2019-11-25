@@ -5,13 +5,8 @@
       <p>
         {{ articleData.opening }}
       </p>
-      <div
-        v-for="scenario in articleData.scenarios"
-        :key="scenario.title"
-      >
-        {{ scenario }}
-      </div>
-      <ScenarioContainer />
+
+      <ScenarioContainer v-for="scenario in articleData.scenarios" :key="scenario.title" :scenario="scenario" />
     </article>
     <ShareContainer />
     <RelatedPostsContainer />
