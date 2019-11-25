@@ -15,9 +15,7 @@
         <img :src="scenario.Img1">
       </div>
       <div class="textContent">
-        Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
-        <br> <br>
-        Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
+       {{ scenario.options[0].option }}
       </div>
     </div>
   </div>
@@ -27,10 +25,8 @@
             <img :src="scenario.Img2">
           </div>
           <div class="textContent">
-            Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
-            <br> <br>
-            Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
-          </div>
+            {{ scenario.options[1].option }}
+             </div>
         </div>
       </div>
     </div>
