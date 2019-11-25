@@ -3,28 +3,44 @@
     <div class="bigImageContainer">
       <div class="topLayer">
         <div class="bigImage">
-          <img src="https://picsum.photos/600/300">
+          <img :src="scenario.mainImg">
         </div>
-        <div class="textContent">
-          Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
-          <br> <br>
-          Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
-        </div>
+        <div class="textContent">{{ scenario.text }}</div>
       </div>
     </div>
     <div class="flex-container">
-      <BigImageContainer class="big-image-comtainer" />
-      <BigImageContainer class="big-image-comtainer" />
+      <div class="bigImageContainer">
+    <div class="topLayer">
+      <div class="bigImage">
+        <img :src="scenario.Img1">
+      </div>
+      <div class="textContent">
+        Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
+        <br> <br>
+        Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
+      </div>
+    </div>
+  </div>
+    <div class="bigImageContainer">
+      <div class="topLayer">
+          <div class="bigImage">
+            <img :src="scenario.Img2">
+          </div>
+          <div class="textContent">
+            Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
+            <br> <br>
+            Vitae purus faucibus ornare suspendisse sed nisi. Dignissim cras tincidunt lobortis feugiat vivamus at. Lorem mollis aliquam ut porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import BigImageContainer from '~/components/custom/BigImageContainer'
 
 export default {
   components: {
-    BigImageContainer
   },
   props: {
     scenario: {
@@ -39,8 +55,6 @@ export default {
     .flex-container{
         display: flex;
         padding-top: 10px;
-        /* flex doesn't have gaps so we're doing margin hacks lol */
-        margin:0 0 0 -10px;
         justify-content: center;
         .big-image-comtainer{
             padding-right: 10px;
