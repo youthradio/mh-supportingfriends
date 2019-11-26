@@ -11,30 +11,21 @@
       </div>
     </div>
     <div class="flex-container">
-      <div class="bigImageContainer">
+      <div v-for="option in scenario.options" :key="option" class="bigImageContainer">
         <div class="topLayer">
           <div class="bigImage">
             <img :src="scenario.Img1">
           </div>
           <div class="textContent">
-            {{ scenario.options[0].option }}
-          </div>
-        </div>
-      </div>
-      <div class="bigImageContainer">
-        <div class="topLayer">
-          <div class="bigImage">
-            <img :src="scenario.Img2">
-          </div>
-          <div class="textContent">
-            {{ scenario.options[1].option }}
+            <!-- option IN option 😒-->
+            {{ option.option }}
           </div>
         </div>
       </div>
     </div>
 
     <div class="flex-container">
-      <div class="optionContainer wrong-class">
+      <div class="optionContainer">
         <h5>Results:</h5>
         <div class="textContent">
           {{ scenario.options[0].result }}
@@ -60,6 +51,16 @@ export default {
       type: Object,
       required: true,
       default: null
+    }
+  },
+  data () {
+    return {
+      clickedElement: false
+    }
+  },
+  methods: {
+    findClicked: () => {
+
     }
   }
 }
