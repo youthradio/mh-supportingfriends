@@ -87,9 +87,12 @@ export async function customFetcher () {
   try {
     const goot = new Gootenberg()
     await goot.auth.jwt(credentials)
+    const raw = await goot.docs.get(DOC_ID)
+    console.log(JSON.stringify(raw, null, 4))
     const data = await goot.parse.archie(DOC_ID)
     convertedData = markdown2html(data)
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log('Error fetching data', e)
   }
 
