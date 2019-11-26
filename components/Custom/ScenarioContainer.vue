@@ -52,6 +52,7 @@ export default {
   },
   data () {
     return {
+      intIndex: 0,
       clickedElement: false,
       selectedOption: -1
     }
@@ -61,6 +62,9 @@ export default {
       console.log(id)
       this.clickedElement = true
       this.selectedOption = id
+    },
+    nextQuestion () {
+      this.intIndex = this.intIndex + 1
     }
   }
 }
@@ -92,10 +96,20 @@ export default {
 }
 
 .selectedResult {
-  background-color: red;
+  h5{
+    color: $green;
+  }
+  .textContent{
+  color: $black;
+  }
 }
 .nonResult {
-  background-color: blue;
+  h5{
+    color: $red;
+  }
+  .textContent{
+  color: $red;
+  }
 }
 
 .optionContainer {
