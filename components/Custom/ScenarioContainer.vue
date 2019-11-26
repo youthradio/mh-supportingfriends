@@ -10,8 +10,8 @@
       <div
         v-for="(option, id) in scenario.options"
         :key="option"
-        @click="processOption(id)"
         class="bigImageContainer"
+        @click="processOption(id)"
       >
         <img :src="require(`~/assets/images/${option.img.trim()}`)" class="bigImage">
         <div class="textContent">
@@ -78,6 +78,13 @@ export default {
   }
   .optionContainer {
     flex-basis: 50%;
+    .textContent{
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    margin: 0 auto;
+    pointer-events: none;
+  }
     h5 {
       padding: 10px;
     }
