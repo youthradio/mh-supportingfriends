@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="flex-container">
-      <div v-for="option in scenario.options" :key="option" class="bigImageContainer">
+      <div v-for="(option, id) in scenario.options" :key="option" class="bigImageContainer" @click="processOption(id)">
         <div class="topLayer">
           <div class="bigImage">
             <img :src="scenario.Img1">
@@ -24,17 +24,15 @@
       </div>
     </div>
 
-    <div class="flex-container">
-      <div class="optionContainer">
+    <div v-if="clickedElement" class="flex-container">
+      <div
+        v-for="(result, id) in scenario.options"
+        :key="result"
+        :class="['optionContainer', selectedOption > -1 ? (selectedOption === id ? 'selectedResult':'nonResult'):'']"
+      >
         <h5>Results:</h5>
         <div class="textContent">
-          {{ scenario.options[0].result }}
-        </div>
-      </div>
-      <div class="optionContainer">
-        <h5>Results:</h5>
-        <div class="textContent">
-          {{ scenario.options[1].result }}
+          {{ result.result }}
         </div>
       </div>
     </div>
@@ -55,12 +53,15 @@ export default {
   },
   data () {
     return {
-      clickedElement: false
+      clickedElement: false,
+      selectedOption: -1
     }
   },
   methods: {
-    findClicked: () => {
-
+    processOption (id) {
+      console.log(id)
+      this.clickedElement = true
+      this.selectedOption = id
     }
   }
 }
@@ -82,6 +83,13 @@ export default {
             padding: 10px;
           }
         }
+    }
+
+    .selectedResult{
+      background-color: red;
+    }
+    .nonResult{
+      background-color: blue;
     }
 
     .optionContainer{

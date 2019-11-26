@@ -20,8 +20,8 @@ import CommonUtils from '../mixins/CommonUtils'
 import ArticleData from '../data/data.json'
 import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
-import ScenarioContainer from '~/components/custom/ScenarioContainer'
-import ShareContainer from '~/components/custom/ShareContainer'
+import ScenarioContainer from '~/components/Custom/ScenarioContainer'
+import ShareContainer from '~/components/Custom/ShareContainer'
 import FooterContainer from '~/components/Footer/FooterContainer'
 
 export default {
