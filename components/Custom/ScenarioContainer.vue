@@ -10,7 +10,7 @@
       <div
         v-for="(option, id) in scenario.options"
         :key="option"
-        class="bigImageContainer"
+        :class="['bigImageContainer', (id === 0 ? 'meanResponse' : 'niceResponse')]"
         @click="processOption(id)"
       >
         <img :src="require(`~/assets/images/${option.img.trim()}`)" class="bigImage">
@@ -85,14 +85,21 @@ export default {
     .textContent{
     position: relative;
     z-index: 1;
-    padding: 10px;
+    padding: 0 1rem 1rem 0.0rem;
     margin: 0 auto;
     pointer-events: none;
   }
     h5 {
-      padding: 10px;
+      padding: 0 0 0 0.0rem;
     }
   }
+}
+
+.meanResponse:hover{
+  background-color: red;
+}
+.niceResponse:hover{
+  background-color: yellow;
 }
 
 .selectedResult {
