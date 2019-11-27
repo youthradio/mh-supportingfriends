@@ -93,8 +93,6 @@ export default {
   .basis-50:first-of-type {
     margin-right: 1rem;
   }
-  .optionContainer {
-  }
 }
 .pointer {
   cursor: pointer;
@@ -115,6 +113,7 @@ export default {
   }
 }
 .nonResult {
+  opacity: 0.3;
   h5 {
     color: $red;
   }
@@ -125,6 +124,9 @@ export default {
 
 .optionContainer {
   color: grey;
+  h5 {
+    padding: 0;
+  }
 }
 
 .correct-result {
