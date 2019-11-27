@@ -1,10 +1,13 @@
 <template>
-  <div class="Container">
+  <div class="container">
     <h4>
       {{ scenario.title }}
     </h4>
-    <div class="bigImageContainer">
-      <img :src="require(`~/assets/images/${scenario.img.trim()}`)" class="bigImage">
+    <div class="position-relative">
+      <img
+        :src="require(`~/assets/images/${scenario.img.trim()}`)"
+        class="bigImage"
+      >
       <div class="textContent">
         {{ scenario.text }}
       </div>
@@ -12,29 +15,33 @@
     <div class="flex-container">
       <div
         v-for="(option, id) in scenario.options"
-        :key="option"
-        :class="['bigImageContainer', (id === 0 ? 'meanResponse' : 'niceResponse')]"
+        :key="`${option}-${id}`"
+        :class="['basis-50','position-relative','pointer', (id === 0 ? 'meanResponse' : 'niceResponse')]"
         @click="processOption(id)"
       >
-        <img :src="require(`~/assets/images/${option.img.trim()}`)" class="bigImage">
+        <img
+          :src="require(`~/assets/images/${option.img.trim()}`)"
+          class="bigImage"
+        >
         <div class="textContent">
           {{ option.option }}
         </div>
       </div>
     </div>
-
-    <div
-      v-if="clickedElement"
-      class="flex-container"
-    >
+    <div class="flex-container">
       <div
-        v-for="(result, id) in scenario.options"
-        :key="result"
-        :class="['optionContainer', selectedOption > -1 ? (selectedOption === id ? 'selectedResult':'nonResult'):'']"
+        v-for="(option, id) in scenario.options"
+        :key="`${option}-${id}`"
+        class="basis-50"
       >
-        <h5>Results:</h5>
-        <div class="textContent">
-          {{ result.result }}
+        <div
+          v-if="selectedOption > -1"
+          :class="['optionContainer', selectedOption === id ? 'selectedResult':'nonResult']"
+        >
+          <h5>Results:</h5>
+          <p>
+            {{ option.result }}
+          </p>
         </div>
       </div>
     </div>
@@ -62,7 +69,6 @@ export default {
   },
   methods: {
     processOption (id) {
-      console.log(id)
       this.clickedElement = true
       this.selectedOption = id
     },
@@ -75,50 +81,45 @@ export default {
   <style scoped lang="scss">
 @import "~@/css/vars";
 @import "~@/css/base";
+
 .flex-container {
   display: flex;
-  padding-top: 10px;
   justify-content: center;
   /* bigImageContainer is reused outside of flex so this wouldn't apply to anything outside of a flexbox anyway */
-  .bigImageContainer {
+  .basis-50 {
     flex-basis: 50%;
+    margin-top: 1rem;
+  }
+  .basis-50:first-of-type {
+    margin-right: 1rem;
   }
   .optionContainer {
-    flex-basis: 50%;
-    .textContent{
-    position: relative;
-    z-index: 1;
-    padding: 0 1rem 1rem 0.0rem;
-    margin: 0 auto;
-    pointer-events: none;
-  }
-    h5 {
-      padding: 0 0 0 0.0rem;
-    }
   }
 }
-
-.meanResponse:hover{
+.pointer {
+  cursor: pointer;
+}
+.meanResponse:hover {
   background-color: red;
 }
-.niceResponse:hover{
+.niceResponse:hover {
   background-color: yellow;
 }
 
 .selectedResult {
-  h5{
+  h5 {
     color: $green;
   }
-  .textContent{
-  color: $black;
+  .textContent {
+    color: $black;
   }
 }
 .nonResult {
-  h5{
+  h5 {
     color: $red;
   }
-  .textContent{
-  color: $red;
+  .textContent {
+    color: $red;
   }
 }
 
@@ -130,23 +131,20 @@ export default {
   color: $green;
 }
 
-.bigImageContainer {
+.position-relative {
   position: relative;
 }
 .bigImage {
   z-index: -1;
-  // position: absolute;
-  /* make image size based on the parent container, which is dependent on text */
-  height: auto;
+  position: absolute;
+  height: 100%;
   width: 100%;
-  max-height: 300px;
-  /* clean stretching */
   object-fit: cover;
   object-position: center;
 }
 .textContent {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  @media screen and (min-width: 450px) {
+    min-height: 250px;
+  }
 }
 </style>
