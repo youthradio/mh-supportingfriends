@@ -1,5 +1,8 @@
 <template>
   <div class="Container">
+    <h4>
+      {{ scenario.title }}
+    </h4>
     <div class="bigImageContainer">
       <img :src="require(`~/assets/images/${scenario.img.trim()}`)" class="bigImage">
       <div class="textContent">
