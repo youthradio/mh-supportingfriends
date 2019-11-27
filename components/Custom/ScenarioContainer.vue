@@ -99,10 +99,12 @@ export default {
 }
 
 .meanResponse:hover{
-  background-color: red;
+  background-color: $red;
+  border: 3px solid $red;
 }
 .niceResponse:hover{
-  background-color: yellow;
+  background-color:$green;
+  border:3px solid $green;
 }
 
 .selectedResult {
@@ -132,6 +134,10 @@ export default {
 
 .bigImageContainer {
   position: relative;
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
 }
 .bigImage {
   z-index: -1;
