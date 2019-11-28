@@ -6,7 +6,11 @@
         {{ articleData.opening }}
       </p>
 
-      <ScenarioContainer v-for="scenario in articleData.scenarios" :key="scenario.title" :scenario="scenario" />
+      <ScenarioContainer
+        v-for="(scenario,index) in articleData.scenarios"
+        :key="`${scenario.title}-${index}`"
+        :scenario="scenario"
+      />
     </article>
     <ShareContainer />
     <RelatedPostsContainer />
