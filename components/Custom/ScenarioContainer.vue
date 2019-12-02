@@ -95,14 +95,26 @@ export default {
   }
 }
 
+.niceResponse{
+  .textContent{
+  padding: 6px;
+  }
+}
+
+.meanResponse{
+  .textContent{
+  padding: 6px;
+  }
+}
+
 .meanResponse:hover{
   background-color: none;
-  border: 6px solid $red;
+  outline: 6px solid $red;
 }
 
 .niceResponse:hover{
   background-color: none;
-  border:6px solid $green;
+  outline:6px solid $green;
 }
 
 .niceResponse:hover:after{
