@@ -81,6 +81,7 @@ export default {
   <style scoped lang="scss">
 @import "~@/css/vars";
 @import "~@/css/base";
+@import "~@/css/mixins";
 
 .flex-container {
   display: flex;
@@ -122,10 +123,14 @@ content: '';
 background: url('~assets/images/sun-wake.png') no-repeat;
 position: absolute;
 overflow: hidden;
-width: 120px;
-height: 120px;
+width: 80px;
+height: 80px;
 top: 11.5rem;
-right: -3.5rem;
+right: -1.5rem;
+  @include breakpoint(medium){
+    top: 8.5rem;
+    right: -1rem;
+  }
 }
 .meanResponse:hover:after{
 content: '';
@@ -137,6 +142,10 @@ height: 120px;
 top: -60.5px;
 right: 0rem;
 left: -3.5rem;
+@include breakpoint(medium){
+    top: -60.5px;
+    left: -2.5rem;
+  }
 }
 
 .pointer {
