@@ -96,13 +96,13 @@ export default {
 }
 
 .meanResponse:hover{
-  background-color: $red;
-  border: 3px solid $red;
+  background-color: none;
+  border: 6px solid $red;
 }
 
 .niceResponse:hover{
-  background-color:$green;
-  border:3px solid $green;
+  background-color: none;
+  border:6px solid $green;
 }
 
 .niceResponse:hover:after{
@@ -122,7 +122,7 @@ position: absolute;
 overflow: hidden;
 width: 120px;
 height: 120px;
-top: -3.5rem;
+top: -60.5px;
 right: 0rem;
 left: -3.5rem;
 }
