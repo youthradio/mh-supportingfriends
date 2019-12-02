@@ -1,0 +1,14 @@
+<svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="38.9148" cy="38.7339" r="17.6596" fill="#E0BC3D"/>
+<line x1="18.7804" y1="22.8493" x2="9.24053" y2="14.5273" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="38.4999" y1="15.1595" x2="38.4999" y2="2.49997" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="59.9642" y1="23.0773" x2="68.825" y2="14.0357" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="58.5198" y1="58.6678" x2="68.2727" y2="66.7392" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="20.0008" y1="58.5291" x2="10.529" y2="66.9285" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="40.4999" y1="63.4999" x2="40.4999" y2="76.1595" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="15.1595" y1="41.234" x2="2.49997" y2="41.234" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<line x1="62.8966" y1="39.5458" x2="75.5561" y2="39.5074" stroke="#E0BC3D" stroke-width="5" stroke-linecap="round"/>
+<circle cx="33.5" cy="37.5" r="2" fill="black" stroke="black"/>
+<circle cx="45.5" cy="37.5" r="2" fill="black" stroke="black"/>
+<path d="M33.0071 44C33.0071 44 32.5071 50 39.5071 50C46.5071 50 45.9996 44 45.9996 44" stroke="black" stroke-width="2"/>
+</svg>
