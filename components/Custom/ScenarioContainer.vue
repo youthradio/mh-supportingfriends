@@ -197,6 +197,7 @@ left: -3.5rem;
   object-position: center;
 }
 .textContent {
+  padding: 6px;
   @media screen and (min-width: 450px) {
     min-height: 250px;
   }
