@@ -3,7 +3,7 @@
     <h4>
       {{ scenario.title }}
     </h4>
-    <div class="position-relative">
+    <div class="position-relative scenario-container">
       <img
         :src="require(`~/assets/images/${scenario.img.trim()}`)"
         class="bigImage"
@@ -96,6 +96,46 @@ export default {
   }
 }
 
+.scenario-container{
+  background-color: #EFEFEF; //temporary
+  border: 8px solid #5C9FB5;
+  border-radius: 50px;
+  .textContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin: 0 2rem 0 2rem;
+  }
+  margin: 1rem 0 1rem 0;
+}
+/*.scenario-container:before,
+.scenario-container:after {
+  //makes a after _and_ before ruleset dedicated to what would be a single psudo-element
+  content: ' ';
+  position: absolute;
+  left: 20px;
+  bottom: -30px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 5px solid #333;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+}*/
+
+/*.scenario-container:after {
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  bottom: -40px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+}*/
+
 .niceResponse{
   .textContent{
   padding: 6px;
@@ -110,12 +150,12 @@ export default {
 
 .meanResponse:hover{
   background-color: none;
-  outline: 6px solid $red;
+  outline: 6px solid $grey;
 }
 
 .niceResponse:hover{
   background-color: none;
-  outline:6px solid $green;
+  outline:6px solid $grey;
 }
 
 .niceResponse:hover:after{
@@ -196,6 +236,15 @@ left: -3.5rem;
   object-fit: cover;
   object-position: center;
 }
+.niceResponse, .meanResponse{
+  .textContent{
+  background-color: #5C9FB5;
+  }
+  .textContent:hover{
+  background-color: #5C9FB5;
+  }
+}
+
 .textContent {
   padding: 6px;
   @media screen and (min-width: 450px) {
