@@ -38,7 +38,7 @@
           v-if="selectedOption > -1"
           :class="['optionContainer', selectedOption === id ? 'selectedResult':'nonResult']"
         >
-          <h5>Results:</h5>
+          <h5>Result</h5>
           <p>
             {{ option.result }}
           </p>
