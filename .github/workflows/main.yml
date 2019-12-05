@@ -2,7 +2,8 @@ name: deploy on server
 on:
   push:
     branches: 
-      - deploy
+      - '*'
+      - '!master'
 jobs:
   build:
     name: Build
