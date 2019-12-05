@@ -16,7 +16,7 @@
       <div
         v-for="(option, id) in scenario.options"
         :key="`${option}-${id}`"
-        :class="['basis-50','position-relative','pointer', (id === 0 ? 'meanResponse' : 'niceResponse')]"
+        :class="['basis-50','position-relative','pointer', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
         @click="processOption(id)"
       >
         <img
@@ -158,7 +158,7 @@ export default {
   outline:6px solid $grey;
 }
 
-.niceResponse:hover:after{
+.happySun:after{
 content: '';
 background: url('~assets/images/sun-wake.png') no-repeat;
 position: absolute;
@@ -172,7 +172,7 @@ right: -1.5rem;
     right: -1rem;
   }
 }
-.meanResponse:hover:after{
+.sadSun:after{
 content: '';
 background: url('~assets/images/sad-wake.png') no-repeat;
 position: absolute;
