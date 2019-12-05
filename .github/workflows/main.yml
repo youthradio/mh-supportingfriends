@@ -1,8 +1,8 @@
 name: deploy on server
 on:
   push:
-    tags: 
-      - deploy-web
+    branches: 
+      - gh-pages
 jobs:
   build:
     name: Build
