@@ -258,6 +258,7 @@ left: -3.5rem;
   height: auto;
   background-color: #5C9FB5;
 
+  margin: 30px;
   padding: 30px;
   border-radius: 30px;
   border-color: grey;
@@ -277,18 +278,6 @@ left: -3.5rem;
   top: auto;
   bottom: -40px;
   border: 20px solid;
-  border-color: $grey transparent transparent $grey;
-}
-.btm-left-in:after{
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 38px;
-  right: auto;
-  top: auto;
-  bottom: -20px;
-  border: 12px solid;
   border-color: #5C9FB5 transparent transparent #5C9FB5;
 }
 </style>
