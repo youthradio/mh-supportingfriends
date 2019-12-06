@@ -8,10 +8,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && rm -rf _site/* && rm -rf _deploy/* && cp -R dist/ _site/ && cp -R dist/ _deploy/",
+    "generate": "nuxt generate && rm -rf _site/* && cp -R dist/ _site/ && cp -R .github _site/",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "gh-pages": "npm run generate && cd _site && git add . && git commit -m 'blah' && git push origin gh-pages --force",
-    "deploy": "npm run generate && cd _deploy && git add . && git commit -m 'blah' && git push origin deploy --force"
+    "gh-pages": "npm run generate && cd _site && git add . && git commit --amend --no-edit && git push origin --force"
   },
   "dependencies": {
     "@nuxtjs/google-gtag": "^1.0.4",
