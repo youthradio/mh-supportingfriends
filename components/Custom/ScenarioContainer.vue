@@ -16,7 +16,7 @@
       <div
         v-for="(option, id) in scenario.options"
         :key="`${option}-${id}`"
-        :class="['basis-50','position-relative','pointer', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
+        :class="['basis-50','position-relative','pointer', 'round', 'talk-bubble', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
         @click="processOption(id)"
       >
         <img
@@ -150,12 +150,12 @@ export default {
 
 .meanResponse:hover{
   background-color: none;
-  outline: 6px solid $grey;
+  //outline: 6px solid $grey;
 }
 
 .niceResponse:hover{
   background-color: none;
-  outline:6px solid $grey;
+  //outline:6px solid $grey;
 }
 
 .happySun:after{
@@ -216,7 +216,15 @@ left: -3.5rem;
     padding: 0;
   }
 }
-
+.meanResponse, .niceResponse{
+  .textContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+}
 .correct-result {
   color: $green;
 }
@@ -226,7 +234,6 @@ left: -3.5rem;
   box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-
 }
 .bigImage {
   z-index: -1;
@@ -250,5 +257,19 @@ left: -3.5rem;
   @media screen and (min-width: 450px) {
     min-height: 250px;
   }
+}
+
+.talk-bubble {
+  display: inline-block;
+  position: relative;
+  height: auto;
+  background-color: #5C9FB5;
+
+  padding: 30px;
+  border-radius: 30px;
+  border-color: grey;
+}
+.round{
+  border-radius: 30px;
 }
 </style>
