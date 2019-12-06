@@ -16,5 +16,5 @@ jobs:
         key: ${{ secrets.key }}
         port: ${{ secrets.PORT }}
         script: |
-          whoami
-          ls -al
+          cd static/talking-to-your-teen
+          git fetch && git reset --hard FETCH_HEAD && git clean -df
