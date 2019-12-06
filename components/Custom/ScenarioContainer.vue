@@ -4,10 +4,6 @@
       {{ scenario.title }}
     </h4>
     <div class="position-relative scenario-container">
-      <img
-        :src="require(`~/assets/images/${scenario.img.trim()}`)"
-        class="bigImage"
-      >
       <div class="textContent">
         {{ scenario.text }}
       </div>
@@ -16,13 +12,9 @@
       <div
         v-for="(option, id) in scenario.options"
         :key="`${option}-${id}`"
-        :class="['basis-50','position-relative','pointer', 'round', 'talk-bubble', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
+        :class="['basis-50','position-relative', 'btm-left-in', 'pointer', 'round', 'talk-bubble', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
         @click="processOption(id)"
       >
-        <img
-          :src="require(`~/assets/images/${option.img.trim()}`)"
-          class="bigImage"
-        >
         <div class="textContent">
           {{ option.option }}
         </div>
@@ -246,6 +238,7 @@ left: -3.5rem;
 .niceResponse, .meanResponse{
   .textContent{
   background-color: #5C9FB5;
+  color: #EFEFEF;
   }
   .textContent:hover{
   background-color: #5C9FB5;
@@ -265,11 +258,26 @@ left: -3.5rem;
   height: auto;
   background-color: #5C9FB5;
 
+  margin: 30px;
   padding: 30px;
   border-radius: 30px;
   border-color: grey;
 }
 .round{
   border-radius: 30px;
+}
+
+/*Right triangle, placed bottom left side slightly in*/
+.btm-left-in:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  right: auto;
+  top: auto;
+  bottom: -40px;
+  border: 20px solid;
+  border-color: #5C9FB5 transparent transparent #5C9FB5;
 }
 </style>
