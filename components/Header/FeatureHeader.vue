@@ -15,7 +15,9 @@
     >
     <div class="title">
       <h2> {{ headerData.title }}</h2>
-      <h3> by {{ headerData.author }}</h3>
+      <h3 v-if="headerData.author">
+        by {{ headerData.author }}
+      </h3>
       <h5> {{ headerData.publishDate }}</h5>
     </div>
     <div class="image-caption">

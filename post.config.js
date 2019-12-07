@@ -1,7 +1,7 @@
 export default {
   'baseURL': '/talking-to-your-teen',
   'title': 'Do\'s and Don\'ts of Talking to Your Teen',
-  'author': 'Interns',
+  'author': '',
   'publishDate': 'Dec. 1, 2019',
   'location': 'Oakland, CA',
   'description': `SEO friendly Description`,
@@ -11,8 +11,8 @@ export default {
   'featureImageDescription': 'Woman looking at kiosk.',
   'featureImageCaption': '(Photo: Andersen Ross Photography Inc/Getty Images)',
 
-  'wpPostSlug': 'north-carolina-vs-vaping-companies',
-  'wpPostID': '60986',
+  'wpPostSlug': 'talking-to-your-teen',
+  'wpPostID': '62949',
   // you might not need to change
   'fbAppID': '73080818131',
   'twitterHandler': '@itsyrmedia'
