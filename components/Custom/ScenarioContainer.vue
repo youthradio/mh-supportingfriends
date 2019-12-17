@@ -78,6 +78,7 @@ export default {
 .flex-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   /* bigImageContainer is reused outside of flex so this wouldn't apply to anything outside of a flexbox anyway */
   .basis-50 {
     flex-basis: 50%;
@@ -85,6 +86,9 @@ export default {
   }
   .basis-50:first-of-type {
     margin-right: 1rem;
+  }
+  @include breakpoint(medium){
+    flex-direction: row;
   }
 }
 
@@ -102,31 +106,6 @@ export default {
   }
   margin: 1rem 0 1rem 0;
 }
-/*.scenario-container:before,
-.scenario-container:after {
-  //makes a after _and_ before ruleset dedicated to what would be a single psudo-element
-  content: ' ';
-  position: absolute;
-  left: 20px;
-  bottom: -30px;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border: 5px solid #333;
-  -webkit-border-radius: 28px;
-  -moz-border-radius: 28px;
-  border-radius: 28px;
-}*/
-
-/*.scenario-container:after {
-  width: 20px;
-  height: 20px;
-  left: 5px;
-  bottom: -40px;
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  border-radius: 18px;
-}*/
 
 .niceResponse{
   .textContent{
@@ -157,10 +136,9 @@ position: absolute;
 overflow: hidden;
 width: 80px;
 height: 80px;
-top: 11.5rem;
 right: -1.5rem;
   @include breakpoint(medium){
-    top: 8.5rem;
+    top: 12rem;
     right: -1rem;
   }
 }
