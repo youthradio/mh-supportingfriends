@@ -7,7 +7,7 @@ export default {
   'description': `SEO friendly Description`,
   'url': 'https://interactive.yr.media/talking-to-your-teen',
   'featureImage': 'https://interactive.yr.media/college-app-guide/images/college-guide-featurex1875.jpg',
-  'featureImagePath': 'images/template-feature-image',
+  'featureImagePath': 'images/college-guide-feature',
   'featureImageDescription': 'Woman looking at kiosk.',
   'featureImageCaption': '(Photo: Andersen Ross Photography Inc/Getty Images)',
 
