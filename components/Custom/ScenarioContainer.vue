@@ -23,6 +23,7 @@
     <div class="flex-container">
       <div
         v-for="(option, id) in scenario.options"
+        :ref="`option-id-${id}`"
         :key="`${option}-${id}`"
         class="basis-50"
       >
@@ -63,6 +64,7 @@ export default {
     processOption (id) {
       this.clickedElement = true
       this.selectedOption = id
+      this.$refs[`option-id-${id}`][0].scrollIntoView({ behavior: 'smooth', block: 'center' })
     },
     nextQuestion () {
       this.intIndex = this.intIndex + 1
