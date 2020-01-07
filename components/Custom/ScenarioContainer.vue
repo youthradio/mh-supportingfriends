@@ -95,7 +95,7 @@ export default {
 .scenario-container{
   background-color: #EFEFEF; //temporary
   border: 8px solid #5C9FB5;
-  border-radius: 50px;
+  border-radius: 3rem;
   .textContent{
   display: flex;
   justify-content: center;
@@ -109,13 +109,13 @@ export default {
 
 .niceResponse{
   .textContent{
-  padding: 6px;
+  padding: 0.5rem;
   }
 }
 
 .meanResponse{
   .textContent{
-  padding: 6px;
+  padding: 0.5rem;
   }
 }
 
@@ -134,7 +134,7 @@ content: '';
 background: url('~assets/images/sun-wake.png') no-repeat;
 position: absolute;
 overflow: hidden;
-width: 80px;
+width: 80px; // these may have to be pixels!
 height: 80px;
 right: -1.5rem;
   @include breakpoint(medium){
@@ -147,7 +147,7 @@ content: '';
 background: url('~assets/images/sad-wake.png') no-repeat;
 position: absolute;
 overflow: hidden;
-width: 120px;
+width: 120px; // these may have to be pixels!
 height: 120px;
 top: -60.5px;
 right: 0rem;
@@ -224,20 +224,20 @@ left: -3.5rem;
 }
 
 .textContent {
-  padding: 6px;
+  padding: 0.5rem;
   @media screen and (min-width: 450px) {
-    min-height: 250px;
+    min-height: 10rem;
   }
 }
 
-.talk-bubble {
+.talk-bubble{
   display: inline-block;
   position: relative;
   height: auto;
   background-color: #5C9FB5;
 
-  margin: 30px;
-  padding: 30px;
+  margin: 1rem 1rem 3rem 1rem;
+  padding: 1rem;
   border-radius: 30px;
   border-color: grey;
 }
