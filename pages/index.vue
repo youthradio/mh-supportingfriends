@@ -11,7 +11,10 @@
         :key="`${scenario.title}-${index}`"
         :scenario="scenario"
       />
-      <div role="credits" class="credits">
+      <div
+        role="credits"
+        class="credits"
+      >
         <strong>Credits: </strong> {{ articleData.credits }}
       </div>
     </article>
@@ -67,7 +70,7 @@ export default {
 @import "~@/css/vars";
 @import "~@/css/base";
 
-.credits{
+.credits {
   font-size: 0.8rem;
 }
 </style>
