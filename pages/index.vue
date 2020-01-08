@@ -11,6 +11,9 @@
         :key="`${scenario.title}-${index}`"
         :scenario="scenario"
       />
+      <div role="credits" class="credits">
+        <strong>Credits: </strong> {{ articleData.credits }}
+      </div>
     </article>
     <ShareContainer />
     <RelatedPostsContainer />
@@ -63,4 +66,8 @@ export default {
 <style lang="scss" scoped>
 @import "~@/css/vars";
 @import "~@/css/base";
+
+.credits{
+  font-size: 0.8rem;
+}
 </style>

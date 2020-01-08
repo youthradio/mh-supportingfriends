@@ -5,8 +5,8 @@
       <div
         v-for="post in postsData"
         :key="post.id"
-        class="postElement"
         :style="{ borderColor: post.acf.secondary_color }"
+        class="postElement"
       >
         <div class="postInner">
           <div class="section">
@@ -19,8 +19,8 @@
           <div class="section">
             <a :href="post.link">
               <img
-                class="img-fluid postImage lazyload"
                 :data-src="post.episode_featured_image"
+                class="img-fluid postImage lazyload"
               >
             </a>
           </div>

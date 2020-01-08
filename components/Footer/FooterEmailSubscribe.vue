@@ -4,7 +4,7 @@
       <h3 class="title">
         Get Fresh Updates
       </h3>
-      <form class="mc-form" method="POST" action="" @submit.prevent="submit">
+      <form @submit.prevent="submit" class="mc-form" method="POST" action="">
         <input
           v-model="email"
           class="text email"

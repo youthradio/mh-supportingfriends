@@ -23,8 +23,8 @@
             </a>
           </div>
           <button
-            class="hamburger"
             @click="toggleMenu()"
+            class="hamburger"
           >
             <span />
             <span />
@@ -38,8 +38,8 @@
             class="icon-join-us"
           />
           <button
-            class="icon-search"
             @click="toggleSeach()"
+            class="icon-search"
           />
         </div>
       </div>
@@ -54,8 +54,8 @@
           </form>
         </div>
         <button
-          class="icon-close"
           @click="toggleSeach()"
+          class="icon-close"
         />
       </div>
     </header>

@@ -5,24 +5,24 @@
     </li>
     <li>
       <a
-        class="icon"
         @click="facebookThis"
+        class="icon"
       >
         <span class="share icon-facebook-inverted" />
       </a>
     </li>
     <li>
       <a
-        class="icon"
         @click="tweetMessage"
+        class="icon"
       >
         <span class="share icon-twitter-inverted" />
       </a>
     </li>
     <li>
       <a
-        class="icon"
         @click="emailThis"
+        class="icon"
       >
         <span class="share icon-email-inverted" />
       </a>

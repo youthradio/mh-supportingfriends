@@ -16,5 +16,5 @@ jobs:
         key: ${{ secrets.key }}
         port: ${{ secrets.PORT }}
         script: |
-          cd static/talking-to-your-teen
+          cd static/note-to-parents
           git fetch && git reset --hard FETCH_HEAD && git clean -df

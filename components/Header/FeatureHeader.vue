@@ -8,10 +8,10 @@
         ${headerData.featureImage}x1875.jpg 1875w,
         `"
       :data-src="`${headerData.featureImage}x1875.jpg`"
-      alt="Elva dressed as a fairy"
-
-      class="img-fluid lazyload"
       @load="updateHeaderHeight"
+
+      alt="Elva dressed as a fairy"
+      class="img-fluid lazyload"
     >
     <div class="title">
       <h2> {{ headerData.title }}</h2>
@@ -68,7 +68,7 @@ header {
     left: 0;
     height: 100%;
     width: 45%;
-    background-color:rgba($green, 0.65);
+    background-color:rgba($blue, 0.65);
     z-index: 0;
   }
 }
