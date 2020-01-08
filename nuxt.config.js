@@ -29,7 +29,7 @@ export default {
       { property: 'og:image', content: POSTCONFIG.featureImage },
       { property: 'og:description', content: POSTCONFIG.description },
       { property: 'og:image:alt', content: POSTCONFIG.featureImageDescription },
-      { property: 'fb:app_id', content: POSTCONFIG.fbAppID },
+      // { property: 'fb:app_id', content: POSTCONFIG.fbAppID },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:creator', content: POSTCONFIG.twitterHandler },
       { name: 'twitter:site', content: POSTCONFIG.twitterHandler },

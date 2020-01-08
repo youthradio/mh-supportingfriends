@@ -15,6 +15,6 @@ export default {
   wpPostSlug: 'note-to-parents',
   wpPostID: '62949',
   // you might not need to change
-  fbAppID: '73080818131',
+  // fbAppID: '73080818131',
   twitterHandler: '@itsyrmedia'
 }
