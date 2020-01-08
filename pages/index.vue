@@ -15,7 +15,13 @@
         role="credits"
         class="credits"
       >
-        <strong>Credits: </strong> {{ articleData.credits }}
+        <strong>Credits: </strong>{{ articleData.credits }}
+      </div>
+      <div
+        role="credits"
+        class="credits"
+      >
+        <strong>Thanks: </strong> <span v-html="articleData.thanks" />
       </div>
     </article>
     <ShareContainer />
@@ -49,7 +55,9 @@ export default {
     return {
     }
   },
-  computed: {},
+  computed: {
+
+  },
   watch: {
 
   },
@@ -72,5 +80,6 @@ export default {
 
 .credits {
   font-size: 0.8rem;
+  margin-top: 1rem;
 }
 </style>
