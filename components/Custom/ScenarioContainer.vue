@@ -10,10 +10,10 @@
     </div>
     <div class="flex-container">
       <div
-        v-for="(option, id) in scenario.options"
+        v-for="(option, id) in scenarioOptions"
         :key="`${option}-${id}`"
-        :class="['basis-50','position-relative', 'btm-left-in', 'pointer', 'round', 'talk-bubble', (id === 0 ? 'meanResponse' : 'niceResponse'), (selectedOption > -1 ? (id === 0 ? 'sadSun':'happySun'):'')]"
-        @click="processOption(id)"
+        :class="['basis-50 position-relative btm-left-in pointer round talk-bubble', selectedOptionClass(option, id)]"
+        @click="processOption(option, id)"
       >
         <div class="textContent">
           {{ option.option }}
@@ -22,14 +22,14 @@
     </div>
     <div class="flex-container">
       <div
-        v-for="(option, id) in scenario.options"
+        v-for="(option, id) in scenarioOptions"
         :ref="`option-id-${id}`"
         :key="`${option}-${id}`"
         class="basis-50"
       >
         <div
-          v-if="selectedOption > -1"
-          :class="['optionContainer', selectedOption === id ? 'selectedResult':'nonResult']"
+          v-if="selectedOptionId > -1"
+          :class="['optionContainer', (option.iscorrect.trim() === 'true' ? 'selectedResult':'nonResult')]"
         >
           <h5>Result</h5>
           <p>
@@ -57,13 +57,31 @@ export default {
     return {
       intIndex: 0,
       clickedElement: false,
-      selectedOption: -1
+      selectedOptionId: -1
+    }
+  },
+  computed: {
+    scenarioOptions () {
+      return this.scenario.options
+        .slice(0)
+        .sort(() => 0.5 - Math.random())
     }
   },
   methods: {
-    processOption (id) {
+    selectedOptionClass (option, id) {
+      if (this.selectedOptionId > -1) {
+        // if (this.selectedOptionId === id) {
+        if (option.iscorrect.trim() === 'true') {
+          return 'happySun'
+        } else {
+          return 'sadSun'
+        }
+      }
+      return ''
+    },
+    processOption (option, id) {
       this.clickedElement = true
-      this.selectedOption = id
+      this.selectedOptionId = id
       this.$refs[`option-id-${id}`][0].scrollIntoView({ behavior: 'smooth', block: 'center' })
     },
     nextQuestion () {
@@ -89,72 +107,50 @@ export default {
   .basis-50:first-of-type {
     margin-right: 1rem;
   }
-  @include breakpoint(medium){
+  @include breakpoint(medium) {
     flex-direction: row;
   }
 }
 
-.scenario-container{
-  background-color: #EFEFEF; //temporary
-  border: 8px solid #5C9FB5;
+.scenario-container {
+  background-color: #efefef; //temporary
+  border: 8px solid #5c9fb5;
   border-radius: 3rem;
-  .textContent{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  margin: 0 2rem 0 2rem;
+  .textContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 0 2rem 0 2rem;
   }
   margin: 1rem 0 1rem 0;
 }
 
-.niceResponse{
-  .textContent{
-  padding: 0.5rem;
-  }
-}
-
-.meanResponse{
-  .textContent{
-  padding: 0.5rem;
-  }
-}
-
-.meanResponse:hover{
-  background-color: none;
-  //outline: 6px solid $grey;
-}
-
-.niceResponse:hover{
-  background-color: none;
-  //outline:6px solid $grey;
-}
-
-.happySun:after{
-content: '';
-background: url('~assets/images/sun-wake.png') no-repeat;
-position: absolute;
-overflow: hidden;
-width: 80px; // these may have to be pixels!
-height: 80px;
-right: -1.5rem;
-  @include breakpoint(medium){
+.happySun:after {
+  content: "";
+  background: url("~assets/images/sun-wake.png") no-repeat;
+  position: absolute;
+  overflow: hidden;
+  width: 80px; // these may have to be pixels!
+  height: 80px;
+  right: -1.5rem;
+  @include breakpoint(medium) {
     top: 12rem;
     right: -1rem;
   }
 }
-.sadSun:after{
-content: '';
-background: url('~assets/images/sad-wake.png') no-repeat;
-position: absolute;
-overflow: hidden;
-width: 120px; // these may have to be pixels!
-height: 120px;
-top: -60.5px;
-right: 0rem;
-left: -3.5rem;
-@include breakpoint(medium){
+.sadSun:after {
+  content: "";
+  background: url("~assets/images/sad-wake.png") no-repeat;
+  position: absolute;
+  overflow: hidden;
+  width: 120px; // these may have to be pixels!
+  height: 120px;
+  top: -60.5px;
+  right: 0rem;
+  left: -3.5rem;
+  @include breakpoint(medium) {
     top: -60.5px;
     left: -2.5rem;
   }
@@ -188,15 +184,7 @@ left: -3.5rem;
     padding: 0;
   }
 }
-.meanResponse, .niceResponse{
-  .textContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-  }
-}
+
 .correct-result {
   color: $green;
 }
@@ -204,8 +192,8 @@ left: -3.5rem;
 .position-relative {
   position: relative;
   box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 .bigImage {
   z-index: -1;
@@ -215,15 +203,6 @@ left: -3.5rem;
   object-fit: cover;
   object-position: center;
 }
-.niceResponse, .meanResponse{
-  .textContent{
-  background-color: #5C9FB5;
-  color: #EFEFEF;
-  }
-  .textContent:hover{
-  background-color: #5C9FB5;
-  }
-}
 
 .textContent {
   padding: 0.5rem;
@@ -232,24 +211,35 @@ left: -3.5rem;
   }
 }
 
-.talk-bubble{
+.talk-bubble {
   display: inline-block;
   position: relative;
   height: auto;
-  background-color: #5C9FB5;
+  background-color: #5c9fb5;
 
   margin: 1rem 1rem 3rem 1rem;
   padding: 1rem;
   border-radius: 30px;
   border-color: grey;
+  .textContent {
+    background-color: #5c9fb5;
+    color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .textContent:hover {
+    background-color: #5c9fb5;
+  }
 }
-.round{
+.round {
   border-radius: 30px;
 }
 
 /*Right triangle, placed bottom left side slightly in*/
 .btm-left-in:before {
-  content: ' ';
+  content: " ";
   position: absolute;
   width: 0;
   height: 0;
@@ -258,6 +248,6 @@ left: -3.5rem;
   top: auto;
   bottom: -40px;
   border: 20px solid;
-  border-color: #5C9FB5 transparent transparent #5C9FB5;
+  border-color: #5c9fb5 transparent transparent #5c9fb5;
 }
 </style>

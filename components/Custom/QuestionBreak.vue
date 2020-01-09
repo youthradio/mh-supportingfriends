@@ -13,8 +13,8 @@
             :id="`question-${id}-option-${i}`"
             v-model="innervalue"
             :name="questionData.topic"
-            type="radio"
             :value="option"
+            type="radio"
           >
           <div class="check" />
           <label :for="`question-${id}-option-${i}`">

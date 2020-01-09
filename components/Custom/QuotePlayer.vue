@@ -1,11 +1,11 @@
 <template>
   <div
-    class="quote-container"
     :style=" randomPos "
+    class="quote-container"
   >
     <div
-      class="fade"
       :style="fadeStyle"
+      class="fade"
     >
       <blockquote>
         {{ quoteData.Quote }}

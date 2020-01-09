@@ -1,7 +1,7 @@
 <template>
   <div
-    class="blur-container"
     @click="toggle"
+    class="blur-container"
   >
     <div>
       {{ element }}

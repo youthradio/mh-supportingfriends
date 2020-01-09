@@ -21,7 +21,7 @@
         role="credits"
         class="credits"
       >
-        <strong>Thanks: </strong> <span v-html="articleData.thanks" />
+        <strong>Acknowledgments: </strong> <span v-html="articleData.thanks" />
       </div>
     </article>
     <ShareContainer />

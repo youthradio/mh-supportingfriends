@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="bt-box" @click="unMute">
+    <button @click="unMute" class="bt-box">
       <span class="mute-text">{{ ( muteState? 'TURN SOUND ON' : 'MUTE') }}</span>
       <svg
         v-if="!muteState"
