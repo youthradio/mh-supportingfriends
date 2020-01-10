@@ -25,11 +25,12 @@
         v-for="(option, id) in scenarioOptions"
         :ref="`option-id-${id}`"
         :key="`${option}-${id}`"
+        :class=""
         class="basis-50"
       >
         <div
           v-if="selectedOptionId > -1"
-          :class="['optionContainer', (option.iscorrect.trim() === 'true' ? 'selectedResult':'nonResult')]"
+          :class="['optionContainer', (option.iscorrect.trim() === 'true' ? 'selectedResult':'nonResult'), ['optionContainer', selectedOptionId === id ? 'selectedOption' : '']]"
         >
           <h5>Result</h5>
           <p>
@@ -160,7 +161,13 @@ export default {
   cursor: pointer;
 }
 
+// don't wanna rename anything until it's fine to
+.selectedOption {
+  opacity: 1 !important;
+}
+
 .selectedResult {
+  opacity: 0.3;
   h5 {
     color: $green;
   }
