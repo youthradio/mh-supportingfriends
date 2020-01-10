@@ -5,13 +5,13 @@
       <div
         v-for="post in postsData"
         :key="post.id"
-        :style="{ borderColor: post.acf.secondary_color }"
+        :style="{ borderColor: [post.acf.secondary_color ? post.acf.secondary_color:'#00ebab' ] }"
         class="postElement"
       >
         <div class="postInner">
           <div class="section">
             <h3>
-              <a :style="'borderBottom: 2px solid' + post.acf.secondary_color" :href="post.link">
+              <a :style="'borderBottom: 2px solid' + [post.acf.secondary_color ? post.acf.secondary_color:'#00ebab']" :href="post.link">
                 {{ post.title.rendered | unescape }}
               </a>
             </h3>
